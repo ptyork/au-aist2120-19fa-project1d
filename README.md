@@ -39,15 +39,15 @@ filename = sys.argv[1]
 1. You MUST abstract your most useful logic by creating a function named `rot13` that takes string as a parameter and returns the encrypted string. This function should be "called" as your step 3 above, which will make the main script much cleaner. In other words, the main part of your script should open the file, iterate over each line in the file, and the following function MUST be defined in your script and called to encrypt each line:
 
 ``` 
-        def rot13(astring): 
+        def rot13(string): 
             ... ENCRYPT THE STRING ...
             return encrypted
 ``` 
 2. You MUST edit `testmsg.txt` and add a line with __your__ name in it; perhaps something like "Paul York was here". JUST edit and save the file using VS code or another text editor. No Python code required here.
 
-3. You MUST run your script against the edited version of  `testmsg.txt` and redirect the output to `encrypted_testmsg.txt`. In other words, you should run `python encrypt.py testmsg.txt > encrypted_testmsg.txt` and select `testmsg.txt` when prompted. Include this file in your final submission. __DO NOT WRITE TO A FILE INSIDE OF YOUR SCRIPT. ONLY READ AND PRINT. WRITING OCCURS HERE BY REDIRECTING OUTPUT.__
+3. You MUST run your script against the edited version of  `testmsg.txt` and redirect the output to `encrypted_testmsg.txt`. In other words, you should run `python encrypt.py testmsg.txt > encrypted_testmsg.txt`. Include this file in your final submission. __DO NOT WRITE TO A FILE INSIDE OF YOUR SCRIPT. ONLY READ AND PRINT. WRITING OCCURS HERE BY REDIRECTING OUTPUT.__
 
-Note: If you do output redirection in Windows Powershell (the default shell for VS Code), it outputs writes the file using Unicode, which can cause issues. Use a standard Command Prompt (cmd.exe) if running this in Windows. Should not have any issues on Mac or Linux (and thus Mimir).
+Note: If you do output redirection in Windows Powershell (the default shell for VS Code), it writes the file using Unicode, which can cause issues. Use a standard Command Prompt (cmd.exe) if running this in Windows. Should not have any issues on Mac or Linux (and thus Mimir).
 
 When done, be sure to test the heck out of this and then submit the __project1 directory__ in Mimir.
 
