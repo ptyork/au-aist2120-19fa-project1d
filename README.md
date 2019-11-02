@@ -10,7 +10,7 @@ The script, `encrypt.py`, should:
     - strip() any extra spaces or newlines from the beginning or end of the line
     - create an empty string called `encrypted`
     - now you want to iterate over each CHARACTER in the line. For each:
-        - If the character is NOT a character in [A-Za-z] (use isalpha()), just append it to your `chars` list and go on to the next character
+        - If the character is NOT a character in [A-Za-z] (use isalpha()), just append it to your `encrypted` string and go on to the next character
         - Otherwise use the `ord()` funciton to retrieve the ordinal value of the character and store it in a `chnum` variable (will be between 65 for 'A' and 90 for 'Z' or between 97 for 'a' and 122 for 'z')
         - Subtract from 65 `chnum` if it is an upper case character or 97 from chnum if it is a lower case character...this will give you a value between 0 and 25
         - Add 13 to `chnum` (value will be between 13 and 38)
@@ -39,9 +39,9 @@ filename = sys.argv[1]
 1. You MUST abstract your most useful logic by creating a function named `rot13` that takes string as a parameter and returns the encrypted string. This function should be "called" as your step 3 above, which will make the main script much cleaner. In other words, the main part of your script should open the file, iterate over each line in the file, and the following function MUST be defined in your script and called to encrypt each line:
 
 ``` 
-        def rot13(string): 
+        def rot13(astring): 
             ... ENCRYPT THE STRING ...
-            return string
+            return encrypted
 ``` 
 2. You MUST edit `testmsg.txt` and add a line with __your__ name in it; perhaps something like "Paul York was here". JUST edit and save the file using VS code or another text editor. No Python code required here.
 
@@ -53,7 +53,7 @@ When done, be sure to test the heck out of this and then submit the __project1 d
 
 ## OPTIONAL CHALLENGES 
 
-1. Create a second version of the script, encrypt2.py. This version should import the encryptline function from encrypt (`from encrypt import encryptline`). Instead of asking for a file name and reading the text from the file, read in the text line-by-line from `sys.stdin`. This should allow you to run it interactively AND to pipe in text from another command (e.g., `type testmsg.txt | python encrypt2.py`). Even cooler here, you can "double-pipe" the output and get the original back (e.g., `type testmsg.txt | python encrypt2.py | python encrypt2.py`)
+1. Create a second version of the script, encrypt2.py. This version should import the rot13 function from encrypt (`from encrypt import rot13`). Instead of asking for a file name and reading the text from the file, read in the text line-by-line from `sys.stdin`. This should allow you to run it interactively AND to pipe in text from another command (e.g., `type testmsg.txt | python encrypt2.py`). Even cooler here, you can "double-pipe" the output and get the original back (e.g., `type testmsg.txt | python encrypt2.py | python encrypt2.py`)
 
 2. Preserve the correct capitalization by correctly shifting capital letters by 13 (ord values from 65 to 90) AND lower case letters by 13 (ord values from 97 to 122), but leaving all others alone.
 
